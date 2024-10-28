@@ -1,0 +1,18 @@
+meta {
+  name: Create Post
+  type: http
+  seq: 3
+}
+
+post {
+  url: http://localhost:8080/posts
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "title": "Test Post",
+    "content": "This is my third post content."
+  }
+}

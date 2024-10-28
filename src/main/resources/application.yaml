@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: playground-db
+  # datasource:
+  #   url: jdbc:postgresql://localhost:5432/playground_db
+  #   username: myuser
+  #   password: secret
+  jpa:
+    hibernate:
+      ddl-auto: create-drop # none, create, create-drop, validate
+    defer-datasource-initialization: true
+    # show-sql: true
+    properties:
+      hibernate:
+        # format_sql: true
+        # use_sql_comments: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        flush_mode: commit
+  sql:
+    init:
+      mode: always # always, never
+  
+  docker:
+    compose:
+      enabled: true
+      file: compose.yaml
+      lifecycle-management: start_only
+
+logging:
+  pattern:
+    console: "%d{HH:mm:ss.SSS} [%thread] %-5level %30logger{30} - %msg%n"
+  # level:
+    # org.hibernate.SQL: debug
+    # org.hibernate.orm.jdbc.bind: trace
+

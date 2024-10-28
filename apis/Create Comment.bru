@@ -1,0 +1,18 @@
+meta {
+  name: Create Comment
+  type: http
+  seq: 4
+}
+
+post {
+  url: http://localhost:8080/posts/e7a17770-d002-406c-95d3-98a98b6ced05/comments
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "content": "1",
+    "lock": 8
+  }
+}
